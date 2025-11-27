@@ -8,15 +8,54 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Componente de consola que proporciona una interfaz de menú interactivo
+ * para la gestión de tareas.
+ * <p>
+ * Esta clase implementa {@link CommandLineRunner} para ejecutarse
+ * automáticamente al iniciar la aplicación, presentando un menú
+ * de opciones al usuario para crear, listar, actualizar y eliminar tareas.
+ * </p>
+ *
+ * @author Desarrollador
+ * @version 1.0.0
+ * @since 1.0.0
+ * @see CommandLineRunner
+ * @see TareaService
+ */
 @Component
 public class MenuConsola implements CommandLineRunner {
 
+    /**
+     * Servicio de tareas utilizado para realizar las operaciones CRUD.
+     */
     private final TareaService tareaService;
 
+    /**
+     * Constructor que inyecta el servicio de tareas.
+     *
+     * @param tareaService servicio de tareas para las operaciones CRUD
+     */
     public MenuConsola(TareaService tareaService) {
         this.tareaService = tareaService;
     }
 
+    /**
+     * Ejecuta el menú de consola interactivo al iniciar la aplicación.
+     * <p>
+     * Presenta un menú con las siguientes opciones:
+     * </p>
+     * <ul>
+     *   <li>1. Crear tarea</li>
+     *   <li>2. Listar tareas</li>
+     *   <li>3. Actualizar tarea</li>
+     *   <li>4. Eliminar tarea</li>
+     *   <li>5. Salir</li>
+     * </ul>
+     *
+     * @param args argumentos de línea de comandos (no utilizados)
+     * @throws Exception si ocurre un error durante la ejecución del menú
+     */
     @Override
     public void run(String... args) throws Exception {
         Scanner sc = new Scanner(System.in);
