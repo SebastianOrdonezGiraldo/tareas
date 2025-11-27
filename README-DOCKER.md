@@ -42,8 +42,8 @@ docker build -t tareas-app .
 ```bash
 docker run -p 8080:8080 \
   -e DB_URL="jdbc:mysql://host.docker.internal:3306/tareas_db" \
-  -e DB_USERR_NAME="tu_usuario" \
-  -e DB_PASSWORD="tu_password" \
+  -e DB_USERR_NAME="root" \
+  -e DB_PASSWORD="" \
   tareas-app
 ```
 
