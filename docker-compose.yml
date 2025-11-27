@@ -11,7 +11,7 @@ services:
       MYSQL_USER: tareas_user
       MYSQL_PASSWORD: tareas_password
     ports:
-      - "3306:3306"
+      - "3308:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -33,6 +33,7 @@ services:
       DB_URL: jdbc:mysql://mysql:3306/tareas_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       DB_USER_NAME: tareas_user
       DB_PASSWORD: tareas_password
+      SPRING_PROFILES_ACTIVE: docker
     depends_on:
       mysql:
         condition: service_healthy

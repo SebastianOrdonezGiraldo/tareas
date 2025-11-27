@@ -3,6 +3,7 @@ package com.example.tareas.console;
 import com.example.tareas.model.Tarea;
 import com.example.tareas.service.TareaService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -24,6 +25,7 @@ import java.util.Scanner;
  * @see TareaService
  */
 @Component
+@Profile("!docker")
 public class MenuConsola implements CommandLineRunner {
 
     /**
