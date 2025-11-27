@@ -1,7 +1,7 @@
 package com.example.tareas.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok. Data;
 
 @Data
 @Entity
@@ -9,7 +9,7 @@ import lombok.Data;
 public class Tarea {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType. IDENTITY)
     private Long id;
 
     private String titulo;
